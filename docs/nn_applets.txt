@@ -1,0 +1,25 @@
+
+https://playground.tensorflow.org/ (neural playground, google)
+
+https://vinizinho.net/projects/perceptron-viz/ (perceptron)
+
+http://mccormickml.com/2015/08/26/rbfn-tutorial-part-ii-function-approximation/ (BRF)
+
+https://www.youtube.com/watch?v=2YY8FfQhMME (Hopfield video)
+
+https://phiresky.github.io/kogsys-demos/neural-network-demo (Perceptron, MLP)
+
+https://www.youtube.com/watch?v=vGwemZhPlsA (percetron video)
+
+https://www.youtube.com/watch?v=5u4G23_OohI (gradient descent, 26:30)
+
+https://www.naftaliharris.com/blog/visualizing-k-means-clustering/
+
+https://www.mladdict.com/neural-network-simulator
+
+https://www.cs.hmc.edu/~kpang/nn/som.html (SOM)
+
+https://irath96.github.io/som-demo/ (SOM)
+
+https://www.youtube.com/watch?v=Ilg3gGewQ5U (backpropagation visualiszation)
+
