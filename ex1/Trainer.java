@@ -1,18 +1,18 @@
 /**
- * Εκπαίδευση με gradient descent και mini-batches. ΥΠΕΥΘΥΝΟΣ: Μέλος Γ.
+ * Εκπαίδευση με gradient descent και mini-batches. ΥΠΕΥΘΥΝΟΣ: Μέλος Β.
  */
 public class Trainer {
 
     /**
-     * TODO (Γ): συνολικό σφάλμα εκπαίδευσης  E = sum_n 1/2 * sum_i (T[n][i] - o_i(X[n]))^2
+     * TODO (Β): συνολικό σφάλμα εκπαίδευσης  E = sum_n 1/2 * sum_i (T[n][i] - o_i(X[n]))^2
      * (ΑΘΡΟΙΣΜΑ πάνω σε όλα τα παραδείγματα, όπως ορίζεται στο K4, όχι μέσος όρος).
      */
     public static double totalError(Mlp net, float[][] X, float[][] T) {
-        throw new UnsupportedOperationException("TODO (Μέλος Γ): totalError");
+        throw new UnsupportedOperationException("TODO (Μέλος Β): totalError");
     }
 
     /**
-     * TODO (Γ): εκπαίδευση. Επιστρέφει τον αριθμό των εποχών που έγιναν.
+     * TODO (Β): εκπαίδευση. Επιστρέφει τον αριθμό των εποχών που έγιναν.
      *
      *   Eprev = totalError(...)
      *   για κάθε εποχή:
@@ -26,6 +26,6 @@ public class Trainer {
      * Προαιρετικά: ανακάτεμα της σειράς των παραδειγμάτων σε κάθε εποχή, και όριο ασφαλείας στον αριθμό εποχών.
      */
     public static int train(Mlp net, float[][] X, float[][] T, int L, float eta, float eps, int minEpochs) {
-        throw new UnsupportedOperationException("TODO (Μέλος Γ): train");
+        throw new UnsupportedOperationException("TODO (Μέλος Β): train");
     }
 }

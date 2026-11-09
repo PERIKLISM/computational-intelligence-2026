@@ -5,7 +5,7 @@
 
 /**
  * Αποτέλεσμα ενός τρεξίματος του k-means. ΕΤΟΙΜΟ: δεν χρειάζεται να αλλάξει κανείς.
- * Είναι ο κοινός τρόπος με τον οποίο το KMeans (Α) δίνει τη λύση στο Silhouette (Β) και στο Experiments (Γ).
+ * Είναι ο κοινός τρόπος με τον οποίο το KMeans δίνει τη λύση στο Silhouette και στο Experiments.
  */
 public final class KMeansResult {
 

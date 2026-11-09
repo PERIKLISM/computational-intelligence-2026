@@ -1,5 +1,5 @@
 /**
- * Έλεγχος του backprop με αριθμητικές παραγώγους. ΥΠΕΥΘΥΝΟΣ: Μέλος Β.
+ * Έλεγχος του backprop με αριθμητικές παραγώγους. ΥΠΕΥΘΥΝΟΣ: Μέλος Α.
  * Εκτέλεση: java GradCheck
  *
  * Πλάνο:
@@ -15,6 +15,6 @@
 public class GradCheck {
 
     public static void main(String[] args) {
-        // TODO (Β)
+        // TODO (Α)
     }
 }

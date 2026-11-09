@@ -16,8 +16,8 @@ public class PT2 {
     static final int HIDDEN_ACT = Mlp.TANH;     // Mlp.TANH ή Mlp.RELU
     static final int L = 100;                   // μέγεθος mini-batch (διαιρέτης του N = 4000)
     static final int MIN_EPOCHS = 2000;
-    static final float ETA = 0.05f;             // TODO: ρύθμιση ρυθμού μάθησης (Μέλος Γ)
-    static final float EPS = 1e-3f;             // TODO: κατώφλι τερματισμού (Μέλος Γ)
+    static final float ETA = 0.05f;             // TODO: ρύθμιση ρυθμού μάθησης (Μέλος Β)
+    static final float EPS = 1e-3f;             // TODO: κατώφλι τερματισμού (Μέλος Β)
     static final String DATA_FILE = "../data/classification_8000.txt";
 
     public static void main(String[] args) {

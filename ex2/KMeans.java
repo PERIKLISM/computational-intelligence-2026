@@ -9,12 +9,12 @@
 import java.util.Random;
 
 /**
- * Ο αλγόριθμος k-means. ΥΠΕΥΘΥΝΟΣ: Μέλος Α.
+ * Ο αλγόριθμος k-means. ΥΠΕΥΘΥΝΟΣ: Μέλος Γ.
  *
  * Η εκφώνηση ζητά το M να ορίζεται με #define: στη Java είναι η σταθερά {@link #M}. Το {@link #main} είναι το
  * "πρόγραμμα ομαδοποίησης" της εκφώνησης: φορτώνει τα παραδείγματα, τρέχει k-means με M κέντρα, τυπώνει το σφάλμα
  * ομαδοποίησης και αποθηκεύει τις συντεταγμένες των κέντρων. Οι 6 τιμές του M και τα 50 τρεξίματα γίνονται από το
- * Experiments (Γ), που καλεί την {@link #run}.
+ * Experiments, που καλεί την {@link #run}.
  */
 public class KMeans {
 
@@ -25,7 +25,7 @@ public class KMeans {
     static final String CENTERS_FILE = "centers_M" + M + ".txt";
 
     /**
-     * TODO (Α): ένα πλήρες τρέξιμο k-means με m κέντρα.
+     * TODO: ένα πλήρες τρέξιμο k-means με m κέντρα.
      * <pre>
      * 1. αρχικά κέντρα: m ΔΙΑΦΟΡΕΤΙΚΑ παραδείγματα που επιλέγονται τυχαία με το rnd (αντίγραφα των γραμμών του X)
      * 2. επανάληψη (το πολύ MAX_ITER φορές):
@@ -42,31 +42,31 @@ public class KMeans {
      * @param rnd γεννήτρια τυχαίων αριθμών (ο καλών ορίζει το seed, ώστε κάθε τρέξιμο να είναι διαφορετικό και επαναλήψιμο)
      */
     public static KMeansResult run(double[][] X, int m, Random rnd) {
-        throw new UnsupportedOperationException("TODO (Μέλος Α): KMeans.run");
+        throw new UnsupportedOperationException("TODO (Μέλος Γ): KMeans.run");
     }
 
     /**
-     * TODO (Α): σφάλμα ομαδοποίησης = άθροισμα για όλα τα παραδείγματα του ||xi - μk||^2, όπου μk το κέντρο της ομάδας
+     * TODO: σφάλμα ομαδοποίησης = άθροισμα για όλα τα παραδείγματα του ||xi - μk||^2, όπου μk το κέντρο της ομάδας
      * labels[i] του παραδείγματος i. Τετράγωνο της Ευκλείδειας απόστασης (όπως στην εκφώνηση), ΟΧΙ η απόσταση.
      */
     public static double clusteringError(double[][] X, double[][] centers, int[] labels) {
-        throw new UnsupportedOperationException("TODO (Μέλος Α): KMeans.clusteringError");
+        throw new UnsupportedOperationException("TODO (Μέλος Γ): KMeans.clusteringError");
     }
 
     /**
-     * TODO (Α): αποθηκεύει τη λύση σε αρχείο κειμένου. Η πρώτη γραμμή έχει το σφάλμα ομαδοποίησης και ακολουθεί μία
-     * γραμμή "x y" για κάθε κέντρο. Το καλεί και το Experiments (Γ) για τη βέλτιστη λύση κάθε M.
+     * TODO: αποθηκεύει τη λύση σε αρχείο κειμένου. Η πρώτη γραμμή έχει το σφάλμα ομαδοποίησης και ακολουθεί μία
+     * γραμμή "x y" για κάθε κέντρο. Το καλεί και το Experiments για τη βέλτιστη λύση κάθε M.
      */
     public static void saveCenters(String file, double[][] centers, double error) {
-        throw new UnsupportedOperationException("TODO (Μέλος Α): KMeans.saveCenters");
+        throw new UnsupportedOperationException("TODO (Μέλος Γ): KMeans.saveCenters");
     }
 
-    /** TODO (Α): το απλό πρόγραμμα: Points.load, run με M κέντρα, εκτύπωση σφάλματος, saveCenters(CENTERS_FILE, ...). */
+    /** TODO: το απλό πρόγραμμα: Points.load, run με M κέντρα, εκτύπωση σφάλματος, saveCenters(CENTERS_FILE, ...). */
     public static void main(String[] args) {
         // double[][] X = Points.load(DATA_FILE);
         // KMeansResult r = run(X, M, new Random(SEED));
         // System.out.println("M = " + M + "  σφάλμα ομαδοποίησης = " + r.error + "  επαναλήψεις = " + r.iterations);
         // saveCenters(CENTERS_FILE, r.centers, r.error);
-        throw new UnsupportedOperationException("TODO (Μέλος Α): KMeans.main");
+        throw new UnsupportedOperationException("TODO (Μέλος Γ): KMeans.main");
     }
 }

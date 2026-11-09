@@ -4,14 +4,14 @@
  */
 
 /**
- * Το κριτήριο silhouette. ΥΠΕΥΘΥΝΟΣ: Μέλος Β.
+ * Το κριτήριο silhouette. ΥΠΕΥΘΥΝΟΣ: Μέλος Γ.
  * Ορισμός από το άρθρο που δίνει η εκφώνηση (https://en.wikipedia.org/wiki/Silhouette_(clustering)).
  * Το silhouette ΔΕΝ υπάρχει στις σημειώσεις του μαθήματος, γι' αυτό ο ορισμός γράφεται εδώ.
  */
 public class Silhouette {
 
     /**
-     * TODO (Β): μέση τιμή του silhouette για όλα τα παραδείγματα μιας λύσης του k-means (αριθμός από -1 έως 1, μεγαλύτερος
+     * TODO: μέση τιμή του silhouette για όλα τα παραδείγματα μιας λύσης του k-means (αριθμός από -1 έως 1, μεγαλύτερος
      * σημαίνει καλύτερη ομαδοποίηση).
      * <pre>
      * Για κάθε παράδειγμα i της ομάδας C:
@@ -30,6 +30,6 @@ public class Silhouette {
      * @param m      αριθμός ομάδων (m >= 2)
      */
     public static double compute(double[][] X, int[] labels, int m) {
-        throw new UnsupportedOperationException("TODO (Μέλος Β): Silhouette.compute");
+        throw new UnsupportedOperationException("TODO (Μέλος Γ): Silhouette.compute");
     }
 }

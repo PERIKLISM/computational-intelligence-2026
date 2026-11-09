@@ -1,5 +1,5 @@
 /**
- * Σχεδίαση των παραδειγμάτων ελέγχου με διαφορετικό στυλ για σωστά και λάθος ταξινομημένα. ΥΠΕΥΘΥΝΟΣ: Μέλος Α.
+ * Σχεδίαση των παραδειγμάτων ελέγχου με διαφορετικό στυλ για σωστά και λάθος ταξινομημένα. ΥΠΕΥΘΥΝΟΣ: Μέλος Β.
  *
  * Πρόταση: εικόνα PNG με java.awt.image.BufferedImage και javax.imageio.ImageIO (μέσα στο JDK, χωρίς εξωτερικές
  * βιβλιοθήκες). Εκτέλεση με  java -Djava.awt.headless=true Plot ...
@@ -8,8 +8,8 @@
  */
 public class Plot {
 
-    /** TODO (Α): διαβάζει το αρχείο προβλέψεων του Data.writePredictions και γράφει την εικόνα pngFile. */
+    /** TODO (Β): διαβάζει το αρχείο προβλέψεων του Data.writePredictions και γράφει την εικόνα pngFile. */
     public static void predictions(String predictionsFile, String pngFile) {
-        throw new UnsupportedOperationException("TODO (Μέλος Α): Plot.predictions");
+        throw new UnsupportedOperationException("TODO (Μέλος Β): Plot.predictions");
     }
 }

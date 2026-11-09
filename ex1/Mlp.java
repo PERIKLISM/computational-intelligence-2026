@@ -5,7 +5,7 @@
  * Αρίθμηση επιπέδων: h = 0 είσοδος, h = 1..H κρυμμένα, h = H+1 έξοδος.
  * Ενεργοποίηση κρυμμένων: tanh ή ReLU (ίδια για όλα). Ενεργοποίηση εξόδου: ΠΑΝΤΑ λογιστική.
  *
- * Οι πίνακες παρακάτω είναι το "συμβόλαιο" με τον Backprop (Μέλος Β).
+ * Οι πίνακες παρακάτω είναι το "συμβόλαιο" με τον Backprop (Μέλος Α).
  * Η δέσμευση μνήμης στον constructor είναι ΕΤΟΙΜΗ: μην αλλάξετε ονόματα ή διαστάσεις χωρίς συνεννόηση.
  */
 public class Mlp {
@@ -90,7 +90,7 @@ public class Mlp {
         throw new UnsupportedOperationException("TODO (Μέλος Α): updateWeights");
     }
 
-    /** ΕΤΟΙΜΟ: το backprop(x, d, t, K) της εκφώνησης. Η υλοποίηση είναι στο Backprop.java (Μέλος Β). */
+    /** ΕΤΟΙΜΟ: το backprop(x, d, t, K) της εκφώνησης. Η υλοποίηση είναι στο Backprop.java (Μέλος Α). */
     public void backprop(float[] x, int d, float[] t, int k) {
         Backprop.compute(this, x, d, t, k);
     }

@@ -22,24 +22,24 @@ public class Experiments {
     static final String OUT_DIR = "results";
 
     /**
-     * TODO (Γ): τα βήματα είναι γραμμένα εδώ ως σχόλια.
+     * TODO: τα βήματα είναι γραμμένα εδώ ως σχόλια.
      * <pre>
-     * double[][] X = Points.load(DATA_FILE);                          (Α)
+     * double[][] X = Points.load(DATA_FILE);
      * new java.io.File(OUT_DIR).mkdirs();
      * double[] errors = new double[MS.length], silhouettes = new double[MS.length], ms = new double[MS.length];
      * για κάθε m της MS (δείκτης q):
      *     KMeansResult best = null;
      *     για run = 0 .. RUNS-1:
-     *         KMeansResult r = KMeans.run(X, m, new Random(SEED + 1000L * m + run));     (Α)
+     *         KMeansResult r = KMeans.run(X, m, new Random(SEED + 1000L * m + run));
      *         εκτύπωση "M = m  τρέξιμο = run  σφάλμα = r.error"
      *         αν best == null ή r.error < best.error:  best = r
-     *     KMeans.saveCenters(OUT_DIR + "/best_M" + m + ".txt", best.centers, best.error);   (Α)
+     *     KMeans.saveCenters(OUT_DIR + "/best_M" + m + ".txt", best.centers, best.error);
      *     ScatterPlot.save(X, best.centers, "M = " + m + ", σφάλμα = " + best.error,
-     *                      OUT_DIR + "/clusters_M" + m + ".png");                           (Γ)
-     *     silhouettes[q] = Silhouette.compute(X, best.labels, m);                            (Β)
+     *                      OUT_DIR + "/clusters_M" + m + ".png");
+     *     silhouettes[q] = Silhouette.compute(X, best.labels, m);
      *     errors[q] = best.error;  ms[q] = m;
-     * LinePlot.save(ms, errors, "Σφάλμα ομαδοποίησης ως προς M", "M", "σφάλμα", OUT_DIR + "/error_vs_M.png");        (Β)
-     * LinePlot.save(ms, silhouettes, "Silhouette ως προς M", "M", "silhouette", OUT_DIR + "/silhouette_vs_M.png");   (Β)
+     * LinePlot.save(ms, errors, "Σφάλμα ομαδοποίησης ως προς M", "M", "σφάλμα", OUT_DIR + "/error_vs_M.png");
+     * LinePlot.save(ms, silhouettes, "Silhouette ως προς M", "M", "silhouette", OUT_DIR + "/silhouette_vs_M.png");
      * εκτύπωση πίνακα "M | καλύτερο σφάλμα | silhouette" και του M με το μεγαλύτερο silhouette
      * το ίδιο και στο αρχείο OUT_DIR + "/summary.txt"  (για το report)
      * </pre>
