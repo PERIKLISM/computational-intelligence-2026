@@ -1,7 +1,7 @@
 /*
  * ΠΤ1 - MLP με ένα κρυμμένο επίπεδο (Άσκηση 1, Υπολογιστική Νοημοσύνη 2026-27)
- * Ομάδα: Περικλής Μπούρλης (5523), Βαγγέλης (5492), Πιστι (5336)
- * ΥΠΕΥΘΥΝΟΣ: Μέλος Β. Ο πυρήνας του δικτύου είναι στα Mlp.java, Backprop.java, Data.java, Trainer.java.
+ * Ομάδα: Περικλής Μπούρλης (5523), Βαγγέλης Τζιάλλας (5492), Πιστι (5336)
+ * ΥΠΕΥΘΥΝΟΣ: Μέλος Α. Ο πυρήνας του δικτύου είναι στα Mlp.java, Backprop.java, Data.java, Trainer.java.
  *
  * Μεταγλώττιση: javac -encoding UTF-8 --release 11 *.java
  * Εκτέλεση:     java PT1
@@ -20,7 +20,7 @@ public class PT1 {
     static final String DATA_FILE = "../data/classification_8000.txt";
 
     public static void main(String[] args) {
-        // TODO (Β): συνδέστε τα κομμάτια:
+        // TODO (Α): συνδέστε τα κομμάτια:
         //   Data.load(DATA_FILE);
         //   Mlp net = new Mlp(D, new int[] { H1 }, K, HIDDEN_ACT);
         //   net.initWeights(System.nanoTime());

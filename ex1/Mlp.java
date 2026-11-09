@@ -1,11 +1,11 @@
 /**
  * Πυρήνας του MLP: δομή δικτύου, αρχικοποίηση, forward pass, ενημέρωση βαρών.
- * ΥΠΕΥΘΥΝΟΣ: Μέλος Α.   Λεπτομέρειες στο docs/ex1-roles.md
+ * ΥΠΕΥΘΥΝΟΣ: Μέλος Α (το updateWeights είναι του Μέλους Β).   Λεπτομέρειες στο docs/ex1-roles.md
  *
  * Αρίθμηση επιπέδων: h = 0 είσοδος, h = 1..H κρυμμένα, h = H+1 έξοδος.
  * Ενεργοποίηση κρυμμένων: tanh ή ReLU (ίδια για όλα). Ενεργοποίηση εξόδου: ΠΑΝΤΑ λογιστική.
  *
- * Οι πίνακες παρακάτω είναι το "συμβόλαιο" με τον Backprop (Μέλος Α).
+ * Οι πίνακες παρακάτω είναι το "συμβόλαιο" με τον Backprop (Μέλος Β).
  * Η δέσμευση μνήμης στον constructor είναι ΕΤΟΙΜΗ: μην αλλάξετε ονόματα ή διαστάσεις χωρίς συνεννόηση.
  */
 public class Mlp {
@@ -82,15 +82,15 @@ public class Mlp {
     }
 
     /**
-     * TODO (Α): ενημέρωση βαρών μετά από ένα mini-batch και μηδενισμός των παραγώγων:
+     * TODO (Β): ενημέρωση βαρών μετά από ένα mini-batch και μηδενισμός των παραγώγων:
      *   w[h][i][j] -= eta * gw[h][i][j] / batchSize ;  gw[h][i][j] = 0   (όμοια b και gb)
      * Η διαίρεση με batchSize σημαίνει ΜΕΣΟ ΟΡΟ ανά batch (προεπιλογή της ομάδας).
      */
     public void updateWeights(float eta, int batchSize) {
-        throw new UnsupportedOperationException("TODO (Μέλος Α): updateWeights");
+        throw new UnsupportedOperationException("TODO (Μέλος Β): updateWeights");
     }
 
-    /** ΕΤΟΙΜΟ: το backprop(x, d, t, K) της εκφώνησης. Η υλοποίηση είναι στο Backprop.java (Μέλος Α). */
+    /** ΕΤΟΙΜΟ: το backprop(x, d, t, K) της εκφώνησης. Η υλοποίηση είναι στο Backprop.java (Μέλος Β). */
     public void backprop(float[] x, int d, float[] t, int k) {
         Backprop.compute(this, x, d, t, k);
     }

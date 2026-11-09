@@ -1,5 +1,5 @@
 /**
- * Αλγόριθμος backpropagation (σημειώσεις Λύκα, K4). ΥΠΕΥΘΥΝΟΣ: Μέλος Α.
+ * Αλγόριθμος backpropagation (σημειώσεις Λύκα, K4). ΥΠΕΥΘΥΝΟΣ: Μέλος Β.
  *
  * compute(net, x, d, t, K) για ένα παράδειγμα (x, t), με σφάλμα En = 1/2 * sum_i (t_i - o_i)^2:
  *   1) net.forwardPass(x, d, tmp, K)  ώστε να γεμίσουν οι πίνακες net.y
@@ -11,11 +11,11 @@
  *                          gw[h][i][j] += delta[h][i] * y[h-1][j]
  *                          gb[h][i]    += delta[h][i]
  * ΠΡΟΣΟΧΗ: "+=" και όχι "=": οι παράγωγοι αθροίζονται για όλα τα παραδείγματα του mini-batch.
- * Τους πίνακες gw, gb τους μηδενίζει το Mlp.updateWeights (Μέλος Α).
+ * Τους πίνακες gw, gb τους μηδενίζει το Mlp.updateWeights (Μέλος Β).
  */
 public class Backprop {
 
     static void compute(Mlp net, float[] x, int d, float[] t, int K) {
-        throw new UnsupportedOperationException("TODO (Μέλος Α): Backprop.compute");
+        throw new UnsupportedOperationException("TODO (Μέλος Β): Backprop.compute");
     }
 }

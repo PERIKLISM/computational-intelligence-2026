@@ -2,7 +2,7 @@
 
 | Ρόλος | Ποιος | Αρχεία (όλα στον φάκελο `ex2/`) |
 |---|---|---|
-| **Γ** | ______ | `Points.java`, `KMeans.java`, `Silhouette.java`, `LinePlot.java`, `ScatterPlot.java`, `Experiments.java`, report της Άσκησης 2 |
+| **Γ** | Βαγγέλης Τζιάλλας (5492) | `Points.java`, `KMeans.java`, `Silhouette.java`, `LinePlot.java`, `ScatterPlot.java`, `Experiments.java`, report της Άσκησης 2 |
 
 Η Άσκηση 2 (10%) γίνεται ολόκληρη από τον **Γ**. Οι Α και Β κάνουν την Άσκηση 1 (20%) και ο Γ γράφει επίσης το report της
 Άσκησης 1 (δείτε `docs/ex1-roles.md`). Έτσι ο φόρτος είναι περίπου ίσος.

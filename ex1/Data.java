@@ -1,5 +1,5 @@
 /**
- * Δεδομένα ταξινόμησης και αξιολόγηση. ΥΠΕΥΘΥΝΟΣ: Μέλος Β.
+ * Δεδομένα ταξινόμησης και αξιολόγηση. ΥΠΕΥΘΥΝΟΣ: Μέλος Α.
  * Αρχείο: classification_8000.txt, 8000 γραμμές "x1 x2 κατηγορία" (κατηγορία 1..4).
  * Οι πρώτες 4000 γραμμές είναι το σύνολο εκπαίδευσης και οι τελευταίες 4000 το σύνολο ελέγχου.
  */
@@ -17,31 +17,31 @@ public class Data {
     public static float[][] testT;    // [N_TEST][K]
     public static int[] testLabel;    // [N_TEST]
 
-    /** TODO (Β): φόρτωση του αρχείου και γέμισμα όλων των παραπάνω πινάκων. */
+    /** TODO (Α): φόρτωση του αρχείου και γέμισμα όλων των παραπάνω πινάκων. */
     public static void load(String file) {
-        throw new UnsupportedOperationException("TODO (Μέλος Β): Data.load");
+        throw new UnsupportedOperationException("TODO (Μέλος Α): Data.load");
     }
 
-    /** TODO (Β): κωδικοποίηση 1-από-4: διάνυσμα K θέσεων με 1 στη θέση label-1 και 0 αλλού. */
+    /** TODO (Α): κωδικοποίηση 1-από-4: διάνυσμα K θέσεων με 1 στη θέση label-1 και 0 αλλού. */
     public static float[] encode(int label) {
-        throw new UnsupportedOperationException("TODO (Μέλος Β): Data.encode");
+        throw new UnsupportedOperationException("TODO (Μέλος Α): Data.encode");
     }
 
-    /** TODO (Β): η κατηγορία (1..4) που αντιστοιχεί στη μεγαλύτερη έξοδο του διανύσματος y. */
+    /** TODO (Α): η κατηγορία (1..4) που αντιστοιχεί στη μεγαλύτερη έξοδο του διανύσματος y. */
     public static int classify(float[] y) {
-        throw new UnsupportedOperationException("TODO (Μέλος Β): Data.classify");
+        throw new UnsupportedOperationException("TODO (Μέλος Α): Data.classify");
     }
 
-    /** TODO (Β): ποσοστό (0..100) σωστών αποφάσεων του δικτύου στο σύνολο ελέγχου. */
+    /** TODO (Α): ποσοστό (0..100) σωστών αποφάσεων του δικτύου στο σύνολο ελέγχου. */
     public static double accuracy(Mlp net) {
-        throw new UnsupportedOperationException("TODO (Μέλος Β): Data.accuracy");
+        throw new UnsupportedOperationException("TODO (Μέλος Α): Data.accuracy");
     }
 
     /**
-     * TODO (Β): γράφει μία γραμμή ανά παράδειγμα ελέγχου:  x1 x2 αληθινή_κατηγορία προβλεπόμενη_κατηγορία σωστό(1 ή 0).
+     * TODO (Α): γράφει μία γραμμή ανά παράδειγμα ελέγχου:  x1 x2 αληθινή_κατηγορία προβλεπόμενη_κατηγορία σωστό(1 ή 0).
      * Το αρχείο διαβάζει το Plot.java.
      */
     public static void writePredictions(Mlp net, String file) {
-        throw new UnsupportedOperationException("TODO (Μέλος Β): Data.writePredictions");
+        throw new UnsupportedOperationException("TODO (Μέλος Α): Data.writePredictions");
     }
 }
