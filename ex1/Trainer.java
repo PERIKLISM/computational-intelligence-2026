@@ -8,18 +8,18 @@ public class Trainer {
      * (ΑΘΡΟΙΣΜΑ πάνω σε όλα τα παραδείγματα, όπως ορίζεται στο K4, όχι μέσος όρος).
      */
     public static double totalError(Mlp net, float[][] X, float[][] T) {
-            int d = X[0].length;
-            int K = T[0].length;
-            float[] o = new float[K];
-            double E = 0;
-            for (int n = 0; n < X.length; n++) {
-                net.forwardPass(X[n], d, o, K);
-                for (int k = 0; k < K; k++) {
-                    double e = T[n][k] - o[k];
-                    E += 0.5 * e * e;
-                }
+        int d = X[0].length;
+        int K = T[0].length;
+        float[] o = new float[K];
+        double E = 0;
+        for (int n = 0; n < X.length; n++) {
+            net.forwardPass(X[n], d, o, K);
+            for (int k = 0; k < K; k++) {
+                double e = T[n][k] - o[k];
+                E += 0.5 * e * e;
             }
-            return E;
+        }
+        return E;
     }
 
     /**
