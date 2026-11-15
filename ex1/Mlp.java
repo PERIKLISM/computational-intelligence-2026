@@ -87,7 +87,7 @@ public class Mlp {
      * Η διαίρεση με batchSize σημαίνει ΜΕΣΟ ΟΡΟ ανά batch (προεπιλογή της ομάδας).
      */
     public void updateWeights(float eta, int batchSize) {
-                float s = eta / batchSize;
+        float s = eta / batchSize;
         for (int h = 1; h <= H + 1; h++) {
             for (int i = 0; i < n[h]; i++) {
                 for (int j = 0; j < n[h - 1]; j++) {
