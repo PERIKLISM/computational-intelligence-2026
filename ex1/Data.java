@@ -17,24 +17,79 @@ public class Data {
     public static float[][] testT;    // [N_TEST][K]
     public static int[] testLabel;    // [N_TEST]
 
-    /** TODO (Α): φόρτωση του αρχείου και γέμισμα όλων των παραπάνω πινάκων. */
+    /** (Α): φόρτωση του αρχείου και γέμισμα όλων των παραπάνω πινάκων. */
     public static void load(String file) {
-        throw new UnsupportedOperationException("TODO (Μέλος Α): Data.load");
+        trainX = new float[N_TRAIN][D];
+        trainT = new float[N_TRAIN][];
+        trainLabel = new int[N_TRAIN];
+        testX = new float[N_TEST][D];
+        testT = new float[N_TEST][];
+        testLabel = new int[N_TEST];
+
+        int count = 0;
+        try (java.io.BufferedReader in = new java.io.BufferedReader(new java.io.FileReader(file))) {
+            String line;
+            while ((line = in.readLine()) != null) {
+                line = line.trim();
+                if (line.isEmpty()) continue;
+                if (count >= N_TRAIN + N_TEST) {
+                    throw new IllegalStateException("Το αρχείο έχει περισσότερες από " + (N_TRAIN + N_TEST) + " γραμμές");
+                }
+                String[] p = line.split("\\s+");
+                float x1 = Float.parseFloat(p[0]);
+                float x2 = Float.parseFloat(p[1]);
+                int label = Integer.parseInt(p[2]);
+                if (label < 1 || label > K) {
+                    throw new IllegalStateException("Μη έγκυρη κατηγορία " + label + " στη γραμμή " + (count + 1));
+                }
+                if (count < N_TRAIN) {               // πρώτες 4000: εκπαίδευση
+                    int n = count;
+                    trainX[n][0] = x1;
+                    trainX[n][1] = x2;
+                    trainLabel[n] = label;
+                    trainT[n] = encode(label);
+                } else {                             // τελευταίες 4000: έλεγχος
+                    int n = count - N_TRAIN;
+                    testX[n][0] = x1;
+                    testX[n][1] = x2;
+                    testLabel[n] = label;
+                    testT[n] = encode(label);
+                }
+                count++;
+            }
+        } catch (java.io.IOException e) {
+            throw new java.io.UncheckedIOException("Σφάλμα ανάγνωσης " + file, e);
+        }
+        if (count != N_TRAIN + N_TEST) {
+            throw new IllegalStateException("Διαβάστηκαν " + count + " γραμμές, αναμένονταν " + (N_TRAIN + N_TEST));
+        }
     }
 
-    /** TODO (Α): κωδικοποίηση 1-από-4: διάνυσμα K θέσεων με 1 στη θέση label-1 και 0 αλλού. */
+    /** (Α): κωδικοποίηση 1-από-4: διάνυσμα K θέσεων με 1 στη θέση label-1 και 0 αλλού. */
     public static float[] encode(int label) {
-        throw new UnsupportedOperationException("TODO (Μέλος Α): Data.encode");
+        float[] t = new float[K];   // όλα 0 εξ ορισμού
+        t[label - 1] = 1f;
+        return t;
     }
 
-    /** TODO (Α): η κατηγορία (1..4) που αντιστοιχεί στη μεγαλύτερη έξοδο του διανύσματος y. */
+    /** (Α): η κατηγορία (1..4) που αντιστοιχεί στη μεγαλύτερη έξοδο του διανύσματος y. */
     public static int classify(float[] y) {
-        throw new UnsupportedOperationException("TODO (Μέλος Α): Data.classify");
+        int best = 0;
+        for (int i = 1; i < y.length; i++) {
+            if (y[i] > y[best]) best = i;
+        }
+        return best + 1;
     }
 
-    /** TODO (Α): ποσοστό (0..100) σωστών αποφάσεων του δικτύου στο σύνολο ελέγχου. */
+    /** (Α): ποσοστό (0..100) σωστών αποφάσεων του δικτύου στο σύνολο ελέγχου. */
     public static double accuracy(Mlp net) {
-        throw new UnsupportedOperationException("TODO (Μέλος Α): Data.accuracy");
+        float[] out = new float[K];
+        int correct = 0;
+        for (int n = 0; n < N_TEST; n++) {
+            net.forwardPass(testX[n], D, out, K);
+            if (classify(out) == testLabel[n]) correct++;
+        }
+        return 100.0 * correct / N_TEST;
     }
 
     /**

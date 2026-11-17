@@ -50,35 +50,65 @@ public class Mlp {
         }
     }
 
-    /** TODO (Α): τυχαία αρχικοποίηση όλων των βαρών w και πολώσεων b στο διάστημα (-1, 1). */
+    /** (Α): τυχαία αρχικοποίηση όλων των βαρών w και πολώσεων b στο διάστημα (-1, 1). */
     public void initWeights(long seed) {
-        throw new UnsupportedOperationException("TODO (Μέλος Α): initWeights");
+        java.util.Random rnd = new java.util.Random(seed);
+        for (int h = 1; h <= H + 1; h++) {
+            for (int i = 0; i < n[h]; i++) {
+                for (int j = 0; j < n[h - 1]; j++) {
+                    w[h][i][j] = 2 * rnd.nextFloat() - 1;   // nextFloat() στο [0,1) -> [-1,1)
+                }
+                b[h][i] = 2 * rnd.nextFloat() - 1;
+            }
+        }
     }
 
     /**
-     * TODO (Α): συνάρτηση ενεργοποίησης του επιπέδου h για συνολική είσοδο u.
+     * (Α): συνάρτηση ενεργοποίησης του επιπέδου h για συνολική είσοδο u.
      * h <= H (κρυμμένα): TANH -> tanh(u), RELU -> max(0, u).   h = H+1 (έξοδος): λογιστική 1/(1+exp(-u)).
      */
     public float g(int h, float u) {
-        throw new UnsupportedOperationException("TODO (Μέλος Α): g");
+        if (h == H + 1) {
+            return (float) (1.0 / (1.0 + Math.exp(-u)));
+        }
+        if (hiddenAct == TANH) {
+            return (float) Math.tanh(u);
+        }
+        return u > 0 ? u : 0f;   // RELU
     }
 
     /**
-     * TODO (Α): παράγωγος g'(u) του επιπέδου h, δοσμένης της ΕΞΟΔΟΥ yv = g(u) (όχι του u).
+     * (Α): παράγωγος g'(u) του επιπέδου h, δοσμένης της ΕΞΟΔΟΥ yv = g(u) (όχι του u).
      * TANH: 1 - yv*yv.   RELU: yv > 0 ? 1 : 0.   Έξοδος (λογιστική): yv * (1 - yv).
      * Τη χρησιμοποιεί ο Backprop του Μέλους Β.
      */
     public float gPrime(int h, float yv) {
-        throw new UnsupportedOperationException("TODO (Μέλος Α): gPrime");
+        if (h == H + 1) {
+            return yv * (1 - yv);
+        }
+        if (hiddenAct == TANH) {
+            return 1 - yv * yv;
+        }
+        return yv > 0 ? 1f : 0f;   // RELU
     }
 
     /**
-     * TODO (Α): ευθύ πέρασμα. Βάζει y[0] = x, υπολογίζει y[1..H+1] και αντιγράφει το y[H+1] στο yOut (k = K στοιχεία).
+     * (Α): ευθύ πέρασμα. Βάζει y[0] = x, υπολογίζει y[1..H+1] και αντιγράφει το y[H+1] στο yOut (k = K στοιχεία).
      * ΠΡΕΠΕΙ να αφήνει γεμάτους τους πίνακες y[h], γιατί τους διαβάζει ο Backprop.
      * u = b[h][i] + sum_j w[h][i][j] * y[h-1][j],   y[h][i] = g(h, u).
      */
     public void forwardPass(float[] x, int d, float[] yOut, int k) {
-        throw new UnsupportedOperationException("TODO (Μέλος Α): forwardPass");
+        for (int j = 0; j < d; j++) y[0][j] = x[j];
+        for (int h = 1; h <= H + 1; h++) {
+            for (int i = 0; i < n[h]; i++) {
+                float u = b[h][i];
+                for (int j = 0; j < n[h - 1]; j++) {
+                    u += w[h][i][j] * y[h - 1][j];
+                }
+                y[h][i] = g(h, u);
+            }
+        }
+        for (int i = 0; i < k; i++) yOut[i] = y[H + 1][i];
     }
 
     /**
